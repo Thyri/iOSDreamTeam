@@ -8,11 +8,14 @@
 
 import UIKit
 
-class AddNewViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
+class AddNewViewController: UIViewController  {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
-    let pickerData = ["Mozzarella","Gorgonzola","Provolone","Brie","Maytag Blue","Sharp Cheddar","MonterreyJack","Stilton","Gouda","Goat Cheese", "Asiago"]
+    
+    @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewDidLoad() {
         
@@ -32,17 +35,6 @@ class AddNewViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - Delegates and data sources
-    //MARK: Data Sources
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
+
+
 }
