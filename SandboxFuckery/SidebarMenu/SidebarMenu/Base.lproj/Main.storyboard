@@ -173,7 +173,11 @@
                                                 <action selector="cancel:" destination="5jP-Hs-boR" id="hBI-8H-Ebj"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="wJu-vh-PHg"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="wJu-vh-PHg">
+                                            <connections>
+                                                <action selector="done:" destination="5jP-Hs-boR" id="Y7M-8J-keS"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

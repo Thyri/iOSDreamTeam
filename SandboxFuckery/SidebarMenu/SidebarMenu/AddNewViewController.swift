@@ -17,6 +17,11 @@ class AddNewViewController: UIViewController  {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func done(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
