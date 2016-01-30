@@ -12,17 +12,6 @@ class AddNewViewController: UIViewController  {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
-    var newItem: Clothing?
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "DoneItem" {
-//            if let name = textField.text {
-//                if !name.isEmpty {
-//                    newItem = Clothing(name: name)
-//                }
-//            }
-        }
-    }
     
     @IBAction func cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

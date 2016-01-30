@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505EA0C31C5C68D700D5B866 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505EA0BF1C5C68D700D5B866 /* DraggableView.swift */; };
+		505EA0C41C5C68D700D5B866 /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505EA0C01C5C68D700D5B866 /* DraggableViewBackground.swift */; };
+		505EA0C51C5C68D700D5B866 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505EA0C11C5C68D700D5B866 /* OverlayView.swift */; };
+		505EA0C61C5C68D700D5B866 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505EA0C21C5C68D700D5B866 /* ViewController.swift */; };
 		509BAB391C5C2B4000F0AB61 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509BAB381C5C2B4000F0AB61 /* SWRevealViewController.m */; };
 		509BAB3B1C5C2DD600F0AB61 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509BAB3A1C5C2DD600F0AB61 /* AddNewViewController.swift */; };
-		F1EF13CC1C5C63DF0095A731 /* Clothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EF13CA1C5C63DF0095A731 /* Clothing.swift */; };
-		F1EF13CD1C5C63DF0095A731 /* OutfitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EF13CB1C5C63DF0095A731 /* OutfitManager.swift */; };
 		F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47029F51A7F27DB00E30A3C /* AppDelegate.swift */; };
 		F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47029F91A7F27DB00E30A3C /* Main.storyboard */; };
 		F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47029FC1A7F27DB00E30A3C /* Images.xcassets */; };
@@ -21,7 +23,7 @@
 		F491E74A1A7F4B300026528E /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491E7491A7F4B300026528E /* NewsTableViewController.swift */; };
 		F491E74C1A7F4C630026528E /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491E74B1A7F4C630026528E /* NewsTableViewCell.swift */; };
 		F491E7531A7F7DF20026528E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491E7521A7F7DF20026528E /* MapViewController.swift */; };
-		F491E7551A7F7E010026528E /* WardrobeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491E7541A7F7E010026528E /* WardrobeViewController.swift */; };
+		F491E7551A7F7E010026528E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491E7541A7F7E010026528E /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		505EA0BF1C5C68D700D5B866 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableView.swift; path = "../../../../iOS challenge/TinderSwipeCardsSwift/TinderSwipeCardsSwift/DraggableView.swift"; sourceTree = "<group>"; };
+		505EA0C01C5C68D700D5B866 /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableViewBackground.swift; path = "../../../../iOS challenge/TinderSwipeCardsSwift/TinderSwipeCardsSwift/DraggableViewBackground.swift"; sourceTree = "<group>"; };
+		505EA0C11C5C68D700D5B866 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverlayView.swift; path = "../../../../iOS challenge/TinderSwipeCardsSwift/TinderSwipeCardsSwift/OverlayView.swift"; sourceTree = "<group>"; };
+		505EA0C21C5C68D700D5B866 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../../iOS challenge/TinderSwipeCardsSwift/TinderSwipeCardsSwift/ViewController.swift"; sourceTree = "<group>"; };
 		509BAB371C5C2B4000F0AB61 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		509BAB381C5C2B4000F0AB61 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		509BAB3A1C5C2DD600F0AB61 /* AddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		50D302631C5BA65C00B1D609 /* SidebarMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SidebarMenu-Bridging-Header.h"; sourceTree = "<group>"; };
-		F1EF13CA1C5C63DF0095A731 /* Clothing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clothing.swift; sourceTree = "<group>"; };
-		F1EF13CB1C5C63DF0095A731 /* OutfitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitManager.swift; sourceTree = "<group>"; };
 		F47029F01A7F27DB00E30A3C /* SidebarMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SidebarMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47029F41A7F27DB00E30A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47029F51A7F27DB00E30A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +59,7 @@
 		F491E7491A7F4B300026528E /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		F491E74B1A7F4C630026528E /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		F491E7521A7F7DF20026528E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		F491E7541A7F7E010026528E /* WardrobeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeViewController.swift; sourceTree = "<group>"; };
+		F491E7541A7F7E010026528E /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,19 +113,21 @@
 		F47029F21A7F27DB00E30A3C /* SidebarMenu */ = {
 			isa = PBXGroup;
 			children = (
+				505EA0BF1C5C68D700D5B866 /* DraggableView.swift */,
+				505EA0C01C5C68D700D5B866 /* DraggableViewBackground.swift */,
+				505EA0C11C5C68D700D5B866 /* OverlayView.swift */,
+				505EA0C21C5C68D700D5B866 /* ViewController.swift */,
 				50D302621C5BA58C00B1D609 /* SWRevealViewController */,
 				F47029F91A7F27DB00E30A3C /* Main.storyboard */,
 				F47029FC1A7F27DB00E30A3C /* Images.xcassets */,
 				F47029FE1A7F27DB00E30A3C /* LaunchScreen.xib */,
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
 				F4702A171A7F351C00E30A3C /* MenuController.swift */,
-				F1EF13CA1C5C63DF0095A731 /* Clothing.swift */,
-				F1EF13CB1C5C63DF0095A731 /* OutfitManager.swift */,
 				F491E7491A7F4B300026528E /* NewsTableViewController.swift */,
 				F491E74B1A7F4C630026528E /* NewsTableViewCell.swift */,
 				F47029F51A7F27DB00E30A3C /* AppDelegate.swift */,
 				F491E7521A7F7DF20026528E /* MapViewController.swift */,
-				F491E7541A7F7E010026528E /* WardrobeViewController.swift */,
+				F491E7541A7F7E010026528E /* PhotoViewController.swift */,
 				509BAB3A1C5C2DD600F0AB61 /* AddNewViewController.swift */,
 			);
 			path = SidebarMenu;
@@ -261,12 +267,14 @@
 				509BAB391C5C2B4000F0AB61 /* SWRevealViewController.m in Sources */,
 				F4702A181A7F351C00E30A3C /* MenuController.swift in Sources */,
 				F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */,
+				505EA0C31C5C68D700D5B866 /* DraggableView.swift in Sources */,
+				505EA0C51C5C68D700D5B866 /* OverlayView.swift in Sources */,
+				505EA0C41C5C68D700D5B866 /* DraggableViewBackground.swift in Sources */,
+				505EA0C61C5C68D700D5B866 /* ViewController.swift in Sources */,
 				F491E74C1A7F4C630026528E /* NewsTableViewCell.swift in Sources */,
-				F1EF13CD1C5C63DF0095A731 /* OutfitManager.swift in Sources */,
 				F491E7531A7F7DF20026528E /* MapViewController.swift in Sources */,
 				F491E74A1A7F4B300026528E /* NewsTableViewController.swift in Sources */,
-				F491E7551A7F7E010026528E /* WardrobeViewController.swift in Sources */,
-				F1EF13CC1C5C63DF0095A731 /* Clothing.swift in Sources */,
+				F491E7551A7F7E010026528E /* PhotoViewController.swift in Sources */,
 				509BAB3B1C5C2DD600F0AB61 /* AddNewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

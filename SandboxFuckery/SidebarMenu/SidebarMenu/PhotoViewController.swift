@@ -8,25 +8,9 @@
 
 import UIKit
 
-class WardrobeViewController: UIViewController {
+class PhotoViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
 
-    let myManager = OutfitManager();
-    
-    @IBAction func unwindToList(segue: UIStoryboardSegue) {
-        if segue.identifier == "DoneItem" {
-            let addController = segue.sourceViewController as! AddNewViewController
-            if let newItem = addController.newItem {
-                myManager.wardrobe += [newItem]
-                myManager.save()
-//                let indexPath = NSIndexPath(forRow: myManager.wardrobe.count - 1, inSection: 0)
-//                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            }
-            
-        }
-    }
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
