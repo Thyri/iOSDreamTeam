@@ -11,8 +11,7 @@ import UIKit
 class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
-    @IBOutlet weak var colorCollection: UICollectionView!
-    let colorChoices = [0xE74C3C, 0xC0392B, 0xD35400, 0xE67E22, 0xF1C40F, 0x2ECC71, 0x27AE60, 0x1ABC9C, 0x16A085, 0x3498D8, 0x2980B9, 0x32295E, 0x2C3E50, 0x9B59B6, 0x8E44AD, 0x252525, 0xBDC3C7, 0xEBEBEB]
+<<<<<<< e0b8fb3a579434b2e56a0fdad6d4cf47c26dd045
     
     @IBOutlet weak var casual: UISwitch!
     @IBOutlet weak var interview: UISwitch!
@@ -33,6 +32,10 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
         case Long
         case Dress
     }
+=======
+    @IBOutlet weak var colorCollection: UICollectionView!
+    let colorChoices = [0xE74C3C, 0xC0392B, 0xD35400, 0xE67E22, 0xF1C40F, 0x2ECC71, 0x27AE60, 0x1ABC9C, 0x16A085, 0x3498D8, 0x2980B9, 0x32295E, 0x2C3E50, 0x9B59B6, 0x8E44AD, 0x252525, 0xBDC3C7, 0xEBEBEB]
+>>>>>>> they see me scrollin', they hatin'
     
     enum BottomType {
         case Shorts
@@ -117,7 +120,7 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+<<<<<<< e0b8fb3a579434b2e56a0fdad6d4cf47c26dd045
     
     @IBAction func selectType(sender: AnyObject) {
         switch segmentedTypePicker.selectedSegmentIndex
@@ -139,6 +142,10 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
             type = .Outerwear
         }
     }
+=======
+
+>>>>>>> they see me scrollin', they hatin'
+    
     
     @IBAction func cancel(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
