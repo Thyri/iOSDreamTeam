@@ -12,11 +12,25 @@ class AddNewViewController: UIViewController  {
     
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
+<<<<<<< c57f8c26194cb35b2a8b3f88da870e7b5c3a026b
+    var newItem: Clothing?
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DoneItem" {
+            //            if let name = textField.text {
+            //                if !name.isEmpty {
+            //                    newItem = Clothing(name: name)
+            //                }
+            //            }
+        }
+    }
+=======
     @IBOutlet weak var casualBool: UILabel!
     @IBOutlet weak var PartyBool: UILabel!
     @IBOutlet weak var interviewBool: UILabel!
     @IBOutlet weak var addANewLabel: UILabel!
     @IBOutlet weak var segmentedTypePicker: UISegmentedControl!
+>>>>>>> add new view form
     
     
     
