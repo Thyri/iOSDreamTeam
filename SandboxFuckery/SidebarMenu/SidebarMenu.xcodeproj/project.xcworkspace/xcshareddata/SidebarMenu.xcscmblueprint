@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0BEFB4535642A926945D2384014B6078EA79DCBB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "69ED028F8479765D10C714D1D0D8DA55085318C5" : 0,
+    "0BEFB4535642A926945D2384014B6078EA79DCBB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "42C81853-51B7-4576-9355-ED9414DF6118",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "69ED028F8479765D10C714D1D0D8DA55085318C5" : "iOS%20challenge\/TinderSwipeCardsSwift\/",
+    "0BEFB4535642A926945D2384014B6078EA79DCBB" : "iOSDreamTeam\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SidebarMenu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SandboxFuckery\/SidebarMenu\/SidebarMenu.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Thyri\/iOSDreamTeam.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0BEFB4535642A926945D2384014B6078EA79DCBB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/reterVision\/TinderSwipeCardsSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "69ED028F8479765D10C714D1D0D8DA55085318C5"
+    }
+  ]
+}
