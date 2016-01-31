@@ -54,43 +54,43 @@ class Clothing: NSObject, NSCoding  {
     }
 }
 
-class Top: Clothing {
+//class Top: Clothing {
+////    
+////    var sleeves: Int
+////    
+////    init(color: String, label: String, minTemp: Int, maxTemp: Int, casual: Bool, interview: Bool, party: Bool, sleeves: Int) {
+////        self.sleeves = sleeves
+////        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, casual: casual, interview: interview, party: party)
+////    }
+//}
+//
+//class Bottom: Clothing {
+////    
+////    var length: Int
+////    
+////    init(color: String, label: String, minTemp: Int, maxTemp: Int, casual: Bool, interview: Bool, party: Bool, length: Int) {
+////        self.length = length
+////        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, casual: casual, interview: interview, party: party)
+////    }
+//}
+//
+//class Footwear: Clothing {
 //    
-//    var sleeves: Int
+//}
+//
+//class Outerwear: Clothing {
 //    
-//    init(color: String, label: String, minTemp: Int, maxTemp: Int, casual: Bool, interview: Bool, party: Bool, sleeves: Int) {
-//        self.sleeves = sleeves
-//        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, casual: casual, interview: interview, party: party)
-//    }
-}
-
-class Bottom: Clothing {
-//    
-//    var length: Int
-//    
-//    init(color: String, label: String, minTemp: Int, maxTemp: Int, casual: Bool, interview: Bool, party: Bool, length: Int) {
-//        self.length = length
-//        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, casual: casual, interview: interview, party: party)
-//    }
-}
-
-class Footwear: Clothing {
-    
-}
-
-class Outerwear: Clothing {
-    
-}
+//}
 
 class Outfit {
-    var top: Top
-    var bottom: Bottom
-    var footwear: Footwear
-    var outerwear: Outerwear?
+    var top: Clothing
+    var bottom: Clothing
+    var footwear: Clothing
+    var outerwear: Clothing?
     var blacklist: Bool
     var datesWorn: [NSDate]?
     
-    init(top: Top, bottom: Bottom, footwear: Footwear, outerwear: Outerwear?) {
+    init(top: Clothing, bottom: Clothing, footwear: Clothing, outerwear: Clothing?) {
         self.top = top
         self.bottom = bottom
         self.footwear = footwear

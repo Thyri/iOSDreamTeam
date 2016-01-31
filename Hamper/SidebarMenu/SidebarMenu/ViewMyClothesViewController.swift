@@ -34,20 +34,17 @@ class ViewMyClothesViewController: UITableViewController {
         if segue.identifier == "DoneItem" {
             let addVC = segue.sourceViewController as! AddNewViewController
             if let newItem = addVC.newItem {
-//                let type = addVC.type
+                let typeLabel = addVC.typeLabel
                 
-                
-//                switch type{
-//                case .Top:
-//                    myManager.tops += [newItem as! Top]
-//                case .Bottom:
-//                    myManager.bottoms += [newItem as! Bottom]
-//                case .Footwear:
-//                    myManager.footwear += [newItem as! Footwear]
-//                case .Outerwear:
-//                    myManager.outerwear += [newItem as! Outerwear]
-//                }
-                myManager.tops += [newItem as! Top]
+                if typeLabel == "Shirt" {
+                    myManager.tops += [newItem]
+                } else if typeLabel == "Pants" {
+                    myManager.bottoms += [newItem]
+                } else if typeLabel == "Shoes" {
+                    myManager.footwear += [newItem]
+                } else if typeLabel == "Coat" {
+                    myManager.outerwear += [newItem]
+                }
                 myManager.save()
                 let indexPath = NSIndexPath(forRow: myManager.tops.count - 1, inSection: 0)
                 tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

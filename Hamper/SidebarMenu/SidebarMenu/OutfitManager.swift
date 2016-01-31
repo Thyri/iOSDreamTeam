@@ -13,10 +13,10 @@ class OutfitManager {
     var pastOutfits = [Outfit]()
     var todaysOutfits = [Outfit]()
 
-    var tops = [Top]()
-    var bottoms = [Bottom]()
-    var footwear = [Footwear]()
-    var outerwear = [Outerwear]()
+    var tops = [Clothing]()
+    var bottoms = [Clothing]()
+    var footwear = [Clothing]()
+    var outerwear = [Clothing]()
     
     enum Occasion {
         case Casual
@@ -26,29 +26,65 @@ class OutfitManager {
     
     let setOccasion = Occasion.Casual
     
-    func archivePath() -> String? {
+    func archivePath(name: String) -> String? {
         let directoryList = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         if let documentsPath = directoryList.first {
-            return documentsPath + "/Wardrobe"
+            return documentsPath + name
         }
         assertionFailure("Could not determine where to store file.")
         return nil
     }
     
     func save() {
-        if let theArchivePath = archivePath() {
+        if let theArchivePath = archivePath("tops") {
             if NSKeyedArchiver.archiveRootObject(tops, toFile: theArchivePath) {
-                print("Saved wardrobe successfully.")
+                print("Saved tops successfully.")
             } else {
-                assertionFailure("Could not save file.")
+                assertionFailure("Could not save tops file.")
+            }
+        }
+        if let theArchivePath = archivePath("bottom") {
+            if NSKeyedArchiver.archiveRootObject(bottoms, toFile: theArchivePath) {
+                print("Saved bottoms successfully.")
+            } else {
+                assertionFailure("Could not save bottoms file.")
+            }
+        }
+        if let theArchivePath = archivePath("footwear") {
+            if NSKeyedArchiver.archiveRootObject(tops, toFile: theArchivePath) {
+                print("Saved footwear successfully.")
+            } else {
+                assertionFailure("Could not save footwear file.")
+            }
+        }
+        if let theArchivePath = archivePath("outerwear") {
+            if NSKeyedArchiver.archiveRootObject(bottoms, toFile: theArchivePath) {
+                print("Saved outerwear successfully.")
+            } else {
+                assertionFailure("Could not save outerwear file.")
             }
         }
     }
     
     init () {
-        if let theArchivePath = archivePath() {
+        if let theArchivePath = archivePath("tops") {
             if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
-                tops = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [Top]
+                tops = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [Clothing]
+            }
+        }
+        if let theArchivePath = archivePath("bottoms") {
+            if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
+                bottoms = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [Clothing]
+            }
+        }
+        if let theArchivePath = archivePath("footwear") {
+            if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
+                footwear = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [Clothing]
+            }
+        }
+        if let theArchivePath = archivePath("outerwear") {
+            if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
+                outerwear = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [Clothing]
             }
         }
     }

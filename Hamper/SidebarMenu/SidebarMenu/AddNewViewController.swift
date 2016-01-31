@@ -16,42 +16,19 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var mainImage: UIImageView!
     
+    @IBOutlet weak var seasonCollection: UICollectionView!
     @IBOutlet weak var occasionCollection: UICollectionView!
     let colorChoices = [0xE74C3C, 0xC0392B, 0xD35400, 0xE67E22, 0xF1C40F, 0x2ECC71, 0x27AE60, 0x1ABC9C, 0x16A085, 0x3498D8, 0x2980B9, 0x32295E, 0x2C3E50, 0x9B59B6, 0x8E44AD, 0x252525, 0xBDC3C7, 0xEBEBEB]
     let articleChoices: [UIImage] = [UIImage(named: "Shirt-100")!, UIImage(named: "Pants-100")!, UIImage(named: "Shoes-100")!]
     let labelChoices: [String] = ["Shirt", "Pants", "Shoes"]
     let occasionChoices: [String] = ["Casual", "Party", "Interview"]
+    var occasionValues: [Bool] = [true, false, false]
     let seasonChoices: [String] = ["Winter", "Spring", "Summer", "Autumn"]
+    var seasonValues: [Bool] = [true, false, false, false]
     
     @IBOutlet weak var clothingLabel: UITextField!
     
-    enum ClothingType {
-        case Top
-        case Bottom
-        case Outerwear
-        case Footwear
-    }
-    
-    enum TopType {
-        case Tank
-        case Tee
-        case Long
-    }
-    
-    enum BottomType {
-        case Shorts
-        case Pants
-        case Skirt
-    }
-    
-    enum FootwearType {
-        case Sneakers
-        case Heels
-        case Loafers
-        case Boots
-    }
-    
-    var type = ClothingType.Top
+    var typeLabel = "Shirt"
     
     var newItem: Clothing?
     
@@ -59,28 +36,11 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
         if segue.identifier == "DoneItem" {
             if let name = clothingLabel.text {
                 if !name.isEmpty {
-                    newItem = Top(color: 0, label: name, minTemp: 0, maxTemp: 100, casual: true, interview: true, party: true)
+                    newItem = Clothing(color: 0, label: name, minTemp: 0, maxTemp: 100, casual: true, interview: true, party: true)
                 }
             }
-            
-            //            switch type{
-            //
-            //            case .Top:
-            //                newItem = Top(color: 0, label: "Favorite T Shirt", minTemp: 0, maxTemp: 100, casual: casual.on, interview: interview.on, party: party.on)
-            //
-            //            case .Bottom:
-            //                newItem = Bottom(color: 0, label: addANewLabel.text!, minTemp: 0, maxTemp: 100, casual: casual.on, interview: interview.on, party: party.on)
-            //
-            //            case .Footwear:
-            //                newItem = Footwear(color: 0, label: addANewLabel.text!, minTemp: 0, maxTemp: 100, casual: casual.on, interview: interview.on, party: party.on)
-            //
-            //            case .Outerwear:
-            //                newItem = Outerwear(color: 0, label: addANewLabel.text!, minTemp: 0, maxTemp: 100, casual: casual.on, interview: interview.on, party: party.on)
-            //
-            //            }
         }
     }
-    
     
     override func viewDidLoad() {
         
@@ -99,20 +59,29 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
         colorCollection.dataSource = self
         colorCollection.delegate = self
         colorCollection.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "ColorCell")
+//        colorCollection.
         
         articleCollection.backgroundColor = UIColor.whiteColor()
         articleCollection.dataSource = self
         articleCollection.delegate = self
         articleCollection!.registerNib(UINib(nibName: "ArticleCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCell")
+//        articleCollection.cellForItemAtIndexPath(0)?.selected = true
         
         mainImage.image = articleChoices[0]
         
-//        occasionCollection.backgroundColor = UIColor.whiteColor()
-//        occasionCollection.dataSource = self
-//        occasionCollection.delegate = self
-//        occasionCollection.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "OccasionCell")
-
+        occasionCollection.backgroundColor = UIColor.whiteColor()
+        occasionCollection.dataSource = self
+        occasionCollection.delegate = self
+        occasionCollection!.registerNib(UINib(nibName: "LabelCell", bundle: nil), forCellWithReuseIdentifier: "OccasionCell")
+        occasionCollection.allowsMultipleSelection = true
+//        occasionCollection.cellForItemAtIndexPath(0)?.selected = true
         
+        seasonCollection.backgroundColor = UIColor.whiteColor()
+        seasonCollection.dataSource = self
+        seasonCollection.delegate = self
+        seasonCollection!.registerNib(UINib(nibName: "LabelCell", bundle: nil), forCellWithReuseIdentifier: "SeasonCell")
+        seasonCollection.allowsMultipleSelection = true
+//        seasonCollection.cellForItemAtIndexPath(0)?.selected = true
         
     }
     
@@ -132,15 +101,17 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("ColorCell", forIndexPath: indexPath)
             let currentColor = UInt(colorChoices[indexPath.row])
             cell.backgroundColor = UIColorFromRGB(currentColor)
-            
         } else if collectionView == articleCollection {
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("ArticleCell", forIndexPath: indexPath)
             (cell as! ArticleCell).imageView.image = articleChoices[indexPath.row]
             (cell as! ArticleCell).textLabel.text = labelChoices[indexPath.row]
         } else if collectionView == occasionCollection {
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("Occasion", forIndexPath: indexPath)
-//            cell.textLabel = occasionChoices[indexPath.row]
-        } else {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("OccasionCell", forIndexPath: indexPath)
+            (cell as! LabelCell).textLabel.text = occasionChoices[indexPath.row]
+        }else if collectionView == seasonCollection{
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("SeasonCell", forIndexPath: indexPath)
+            (cell as! LabelCell).textLabel.text = seasonChoices[indexPath.row]
+        }else {
             assertionFailure("collectionview cellforindex not exhaustive")
         }
         
@@ -148,21 +119,42 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var cell = UICollectionViewCell()
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
         if collectionView == colorCollection{
-            let cell = collectionView.cellForItemAtIndexPath(indexPath)
             let currentColor = UInt(colorChoices[indexPath.row])
             mainImage.backgroundColor = UIColorFromRGB(currentColor)
         } else if collectionView == articleCollection {
-            let cell = collectionView.cellForItemAtIndexPath(indexPath)
             mainImage.image = articleChoices[indexPath.row]
+            typeLabel = labelChoices[indexPath.row]
+            cell?.backgroundColor = UIColorFromRGB(0xB3B3B3)
         } else if collectionView == occasionCollection {
-//            let cell = collectionView.cellForItemAtIndexPath(indexPath)
-//            mainImage.image = articleChoices[indexPath.row]
+            occasionValues[indexPath.row] = true
+            cell?.backgroundColor = UIColorFromRGB(0xB3B3B3)
+        } else if collectionView == seasonCollection {
+            seasonValues[indexPath.row] = true
+            cell?.backgroundColor = UIColorFromRGB(0xB3B3B3)
         }else {
             assertionFailure("collectionview cellforindex not exhaustive")
         }
         
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        if collectionView == colorCollection{
+
+        } else if collectionView == articleCollection {
+            cell?.backgroundColor = UIColorFromRGB(0xFFFFFF)
+        }else if collectionView == occasionCollection {
+            occasionValues[indexPath.row] = false
+            cell?.backgroundColor = UIColorFromRGB(0xFFFFFF)
+        } else if collectionView == seasonCollection {
+            seasonValues[indexPath.row] = false
+            cell?.backgroundColor = UIColorFromRGB(0xFFFFFF)
+        }else {
+            assertionFailure("collectionview cellforindex not exhaustive")
+        }
+
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -173,7 +165,9 @@ class AddNewViewController: UIViewController, UICollectionViewDelegate, UICollec
             countValue = articleChoices.count
         } else if collectionView == occasionCollection {
             countValue = occasionChoices.count
-        } else {
+        } else if collectionView == seasonCollection{
+            countValue = seasonChoices.count
+        }else {
             assertionFailure("collectionview cellforindex not exhaustive")
             
         }
