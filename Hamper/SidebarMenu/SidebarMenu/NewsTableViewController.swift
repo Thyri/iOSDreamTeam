@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsTableViewController: UITableViewController {
+class NewsTableViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
         
         override func viewDidLoad() {

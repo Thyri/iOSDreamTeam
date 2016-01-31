@@ -11,6 +11,9 @@
 		509BAB3B1C5C2DD600F0AB61 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509BAB3A1C5C2DD600F0AB61 /* AddNewViewController.swift */; };
 		50F6C0301C5D647F008BC2E4 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50F6C02F1C5D647F008BC2E4 /* ReadMe.txt */; };
 		50F6C0321C5D9791008BC2E4 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6C0311C5D9791008BC2E4 /* NewsTableViewController.swift */; };
+		50F6C0341C5D9CD7008BC2E4 /* ViewMyMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6C0331C5D9CD7008BC2E4 /* ViewMyMatchesViewController.swift */; };
+		50F6C0361C5DBAA7008BC2E4 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50F6C0351C5DBAA7008BC2E4 /* ArticleCell.xib */; };
+		50F6C0381C5DBACA008BC2E4 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F6C0371C5DBACA008BC2E4 /* ArticleCell.swift */; };
 		F10AB56F1C5D359A00498583 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10AB56B1C5D359A00498583 /* DraggableView.swift */; };
 		F10AB5701C5D359A00498583 /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10AB56C1C5D359A00498583 /* DraggableViewBackground.swift */; };
 		F10AB5711C5D359A00498583 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10AB56D1C5D359A00498583 /* OverlayView.swift */; };
@@ -44,6 +47,9 @@
 		50D302631C5BA65C00B1D609 /* SidebarMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SidebarMenu-Bridging-Header.h"; sourceTree = "<group>"; };
 		50F6C02F1C5D647F008BC2E4 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		50F6C0311C5D9791008BC2E4 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		50F6C0331C5D9CD7008BC2E4 /* ViewMyMatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewMyMatchesViewController.swift; sourceTree = "<group>"; };
+		50F6C0351C5DBAA7008BC2E4 /* ArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		50F6C0371C5DBACA008BC2E4 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		F10AB56B1C5D359A00498583 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		F10AB56C1C5D359A00498583 /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
 		F10AB56D1C5D359A00498583 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -127,8 +133,11 @@
 				F47029F31A7F27DB00E30A3C /* Supporting Files */,
 				F4702A171A7F351C00E30A3C /* MenuController.swift */,
 				F47029F51A7F27DB00E30A3C /* AppDelegate.swift */,
+				50F6C0331C5D9CD7008BC2E4 /* ViewMyMatchesViewController.swift */,
 				F491E7541A7F7E010026528E /* ViewMyClothesViewController.swift */,
 				509BAB3A1C5C2DD600F0AB61 /* AddNewViewController.swift */,
+				50F6C0351C5DBAA7008BC2E4 /* ArticleCell.xib */,
+				50F6C0371C5DBACA008BC2E4 /* ArticleCell.swift */,
 				50F6C02F1C5D647F008BC2E4 /* ReadMe.txt */,
 				F10AB5731C5D373800498583 /* Clothing.swift */,
 				F10AB5751C5D374900498583 /* OutfitManager.swift */,
@@ -253,6 +262,7 @@
 				F47029FB1A7F27DB00E30A3C /* Main.storyboard in Resources */,
 				F4702A001A7F27DC00E30A3C /* LaunchScreen.xib in Resources */,
 				50F6C0301C5D647F008BC2E4 /* ReadMe.txt in Resources */,
+				50F6C0361C5DBAA7008BC2E4 /* ArticleCell.xib in Resources */,
 				F47029FD1A7F27DB00E30A3C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +285,13 @@
 				509BAB391C5C2B4000F0AB61 /* SWRevealViewController.m in Sources */,
 				F10AB56F1C5D359A00498583 /* DraggableView.swift in Sources */,
 				F10AB5741C5D373800498583 /* Clothing.swift in Sources */,
+				50F6C0381C5DBACA008BC2E4 /* ArticleCell.swift in Sources */,
 				F4702A181A7F351C00E30A3C /* MenuController.swift in Sources */,
 				F47029F61A7F27DB00E30A3C /* AppDelegate.swift in Sources */,
 				F10AB5711C5D359A00498583 /* OverlayView.swift in Sources */,
 				F10AB5761C5D374900498583 /* OutfitManager.swift in Sources */,
 				50F6C0321C5D9791008BC2E4 /* NewsTableViewController.swift in Sources */,
+				50F6C0341C5D9CD7008BC2E4 /* ViewMyMatchesViewController.swift in Sources */,
 				F491E7551A7F7E010026528E /* ViewMyClothesViewController.swift in Sources */,
 				F10AB5721C5D359A00498583 /* ViewController.swift in Sources */,
 				509BAB3B1C5C2DD600F0AB61 /* AddNewViewController.swift in Sources */,
