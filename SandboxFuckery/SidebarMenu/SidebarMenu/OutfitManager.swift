@@ -11,12 +11,20 @@ import Foundation
 class OutfitManager {
     
     var pastOutfits = [Outfit]()
-    
-    var wardrobe = [Clothing]()
+    var todaysOutfits = [Outfit]()
+
     var tops = [Top]()
     var bottoms = [Bottom]()
     var footwear = [Footwear]()
     var outerwear = [Outerwear]()
+    
+    enum Occasion {
+        case Casual
+        case Party
+        case Interview
+    }
+    
+    let setOccasion = Occasion.Casual
     
     func archivePath() -> String? {
         let directoryList = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
@@ -29,7 +37,7 @@ class OutfitManager {
     
     func save() {
         if let theArchivePath = archivePath() {
-            if NSKeyedArchiver.archiveRootObject(wardrobe, toFile: theArchivePath) {
+            if NSKeyedArchiver.archiveRootObject(tops, toFile: theArchivePath) {
                 print("Saved wardrobe successfully.")
             } else {
                 assertionFailure("Could not save file.")
@@ -40,15 +48,37 @@ class OutfitManager {
     init () {
         if let theArchivePath = archivePath() {
             if NSFileManager.defaultManager().fileExistsAtPath(theArchivePath) {
-                wardrobe = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [Clothing]
+                tops = NSKeyedUnarchiver.unarchiveObjectWithFile(theArchivePath) as! [Top]
             }
         }
     }
     
-    func generateOptions() -> [Outfit]?{
-        
-        
-        return nil
+    func generateOptions(temp: Int){
+        generateFromAllTypes()
     }
     
+    func generateFromAllTypes(){
+        for t in tops {
+            for b in bottoms {
+                for f in footwear {
+                    for o in outerwear {
+                        switch setOccasion {
+                        case .Casual:
+                            if t.casual && b.casual && f.casual && o.casual{
+                                todaysOutfits += [Outfit(top: t, bottom: b, footwear: f, outerwear: nil)]
+                            }
+                        case .Party:
+                            if t.party && b.party && f.party && o.party{
+                                todaysOutfits += [Outfit(top: t, bottom: b, footwear: f, outerwear: nil)]
+                            }
+                        case .Interview:
+                            if t.interview && b.interview && f.interview && o.interview{
+                                todaysOutfits += [Outfit(top: t, bottom: b, footwear: f, outerwear: nil)]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

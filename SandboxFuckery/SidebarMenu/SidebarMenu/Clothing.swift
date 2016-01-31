@@ -8,42 +8,70 @@
 
 import Foundation
 
-class Clothing  {
-    var color, label: String
-    var minTemp, maxTemp: Int
-    var school: Bool
+class Clothing: NSObject, NSCoding  {
+    let label: String
+    var color, minTemp, maxTemp: Int
+    var casual: Bool
     var interview: Bool
     var party: Bool
     
-    init(color: String, label: String, minTemp: Int, maxTemp: Int, school: Bool, interview: Bool, party: Bool) {
+    let labelKey = "label"
+    let colorKey = "color"
+    let minTempKey = "minTemp"
+    let maxTempKey = "maxTemp"
+    let casualKey = "casual"
+    let partyKey = "party"
+    let interviewKey = "interview"
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(label, forKey: labelKey)
+        aCoder.encodeObject(color, forKey: colorKey)
+        aCoder.encodeObject(minTemp, forKey: minTempKey)
+        aCoder.encodeObject(maxTemp, forKey: maxTempKey)
+        aCoder.encodeObject(casual, forKey: casualKey)
+        aCoder.encodeObject(party, forKey: partyKey)
+        aCoder.encodeObject(interview, forKey: interviewKey)
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        label = aDecoder.decodeObjectForKey(labelKey) as! String
+        color = aDecoder.decodeObjectForKey(colorKey) as! Int
+        minTemp = aDecoder.decodeObjectForKey(minTempKey) as! Int
+        maxTemp = aDecoder.decodeObjectForKey(maxTempKey) as! Int
+        casual = aDecoder.decodeObjectForKey(casualKey) as! Bool
+        party = aDecoder.decodeObjectForKey(partyKey) as! Bool
+        interview = aDecoder.decodeObjectForKey(interviewKey) as! Bool
+    }
+    
+    init(color: Int, label: String, minTemp: Int, maxTemp: Int, casual: Bool, interview: Bool, party: Bool) {
         self.color = color
         self.label = label
         self.minTemp = minTemp
         self.maxTemp = maxTemp
-        self.school = school
+        self.casual = casual
         self.interview = interview
         self.party = party
     }
 }
 
 class Top: Clothing {
-    
-    var sleeves: Int
-    
-    init(color: String, label: String, minTemp: Int, maxTemp: Int, school: Bool, interview: Bool, party: Bool, sleeves: Int) {
-        self.sleeves = sleeves
-        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, school: school, interview: interview, party: party)
-    }
+//    
+//    var sleeves: Int
+//    
+//    init(color: String, label: String, minTemp: Int, maxTemp: Int, casual: Bool, interview: Bool, party: Bool, sleeves: Int) {
+//        self.sleeves = sleeves
+//        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, casual: casual, interview: interview, party: party)
+//    }
 }
 
 class Bottom: Clothing {
-    
-    var length: Int
-    
-    init(color: String, label: String, minTemp: Int, maxTemp: Int, school: Bool, interview: Bool, party: Bool, length: Int) {
-        self.length = length
-        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, school: school, interview: interview, party: party)
-    }
+//    
+//    var length: Int
+//    
+//    init(color: String, label: String, minTemp: Int, maxTemp: Int, casual: Bool, interview: Bool, party: Bool, length: Int) {
+//        self.length = length
+//        super.init(color: color, label: label, minTemp: minTemp,  maxTemp: maxTemp, casual: casual, interview: interview, party: party)
+//    }
 }
 
 class Footwear: Clothing {
@@ -58,11 +86,11 @@ class Outfit {
     var top: Top
     var bottom: Bottom
     var footwear: Footwear
-    var outerwear: Outerwear
+    var outerwear: Outerwear?
     var blacklist: Bool
     var datesWorn: [NSDate]?
     
-    init(top: Top, bottom: Bottom, footwear: Footwear, outerwear: Outerwear) {
+    init(top: Top, bottom: Bottom, footwear: Footwear, outerwear: Outerwear?) {
         self.top = top
         self.bottom = bottom
         self.footwear = footwear
